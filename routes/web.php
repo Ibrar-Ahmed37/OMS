@@ -19,9 +19,13 @@ Route::get('/', function () {
 
 //To show the login Page
 Route::get('/login/{user_type?}',[AuthController::class, 'login'])->name('login');
+Route::get('/validateLogin}',[AuthController::class, 'validateLogin'])->name('validateLogin');
 
 // To default User login
 Route::get('/login',[AuthController::class,'login']);
+// Route::get('/modal',[AuthController::class,'modal'])->name('modal');
+
+// Route::get('/submitDonation',[AuthController::class,'submitDonation'])->name('submitDonation');
 
 //TO show sign up Page
 Route::get('/signup/{user_type?}',[AuthController::class,'signup'])->name('signup');

@@ -40,26 +40,40 @@
       <div class="form-content">
         <div class="login-form">
           <div class="title">{{ request('user_type') }} Login</div>
-          <form action="#">
+          <form action="{{ route('validateLogin') }}">
+            @if(Session::has('fail'))
+            <div class="mt-4 text-large alert alert-danger">{{ Session::get('fail') }} or
+              <a href="{{ route('signup', ['user_type' =>  request('user_type')]) }}">Sigup now</a>
+            </div>
+            @endif
+            @csrf
             <div class="input-boxes">
               <div class="input-box">
                 <i class="fas fa-envelope"></i>
-                <input type="text" placeholder="Enter your email">
+                <input type="text" name="email" placeholder="Enter your email">
               </div>
+              @error('email')
+              <div>{{ $message }}</div>
+              @enderror
               <div class="input-box">
                 <i class="fas fa-lock"></i>
-                <input type="password" placeholder="Enter your password" required>
+                <input type="password" name="password" placeholder="Enter your password" value="{{ old('email') }}"
+                  required>
               </div>
+              @error('password')
+              <div>{{ $message }}</div>
+              @enderror
               <div class="text"><a href="#">Forgot password?</a></div>
               <div class="button input-box">
                 <input type="submit" value="Sumbit">
               </div>
-              <div class="text sign-up-text">Don't have an account? <a href="{{ route('signup', ['user_type' =>  request('user_type')]) }}">Sigup now</a></div>
+              <div class="text sign-up-text">Don't have an account? <a
+                  href="{{ route('signup', ['user_type' =>  request('user_type')]) }}">Sigup now</a></div>
             </div>
           </form>
         </div>
+      </div>
     </div>
-  </div>
 </body>
 
 </html>

@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\User;
+use Illuminate\Support\Facades\Hash;
+
 
 class AuthController extends Controller
 {
@@ -19,9 +21,37 @@ class AuthController extends Controller
     {
         return view("adminLogin");
     }
+    public function modal()
+    {
+        return view("modal");
+    }
     public function signup(){
         return view("signup");
     }
+    public function validateLogin(Request $request) {
+        $credentials = $request->validate([
+            'email' => 'required|email',
+            'password' => 'required',
+        ]);
+
+        $user = User::where('email', $credentials['email'])->first();
+
+        if ($user && Hash::check($credentials['password'], $user->password)) {
+            dd("logged in");
+            // Authentication passed
+            return redirect()->route('submitDonation'); // Change 'dashboard' to your desired redirect route
+        }
+        // else
+        //     dd('not exist');
+        return back()->with('fail', 'Invalid credentials. Please enter Valid credentials');
+    }
+    // public function submitDonation (Request $request){
+    //     // $res = Donation::create([
+    //     //     'name' => $request->input('name'),
+    //     //     'amount' => $request->input('amount'),
+    //     //     'description' => $request->input('description')
+    //     // ]);
+    // }
     public function registerUser(Request $request)
     {
         // Your registration logic goes here
@@ -43,6 +73,7 @@ class AuthController extends Controller
             'phone_number' => $request->input('phone_number'),
             'password' => bcrypt($request->input('password')),
             'gender' => $request->input('gender'),
+            'user_type' => $request->input('user_type')
         ]);
         if ($res) {
             return back()->with('success', 'Registration successful. Please log in.');
@@ -51,4 +82,5 @@ class AuthController extends Controller
         }
 
     }
+    
 }

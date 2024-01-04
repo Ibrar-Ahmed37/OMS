@@ -100,6 +100,7 @@
                             <div class="alert alert-danger">{{ $message }}</div>
                             @enderror
                         </div>
+                        <input type="hidden" name="user_type" value="{{ request('user_type') }}">
                         <div class="mb-1">
                             <button type="submit" class="btn btn-primary">Submit</button>
                         </div>

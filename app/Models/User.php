@@ -16,5 +16,6 @@ class User extends Model
         'phone_number',
         'password',
         'gender',
+        'user_type'
     ];
 }
