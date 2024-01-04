@@ -37,9 +37,9 @@
                             Logins
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="{{ url('userlogin') }}">User Login</a></li>
-                            <li><a class="dropdown-item" href="{{ url('ngologin') }}">NGO Login</a></li>
-                            <li><a class="dropdown-item" href="{{ url('adminlogin') }}">Admin Login</a></li>
+                            <li><a class="dropdown-item" href="{{ route('login', ['user_type' => 'user'])}}">User Login</a></li>
+                            <li><a class="dropdown-item" href="{{ url('login', ['user_type' => 'ngoadmin'])}}">NGO Login</a></li>
+                            <li><a class="dropdown-item" href="{{ url('login', ['user_type' => 'admin'])}}">Admin Login</a></li>
                         </ul>
                     </li>
                 </ul>

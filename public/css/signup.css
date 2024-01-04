@@ -1,0 +1,59 @@
+/* custom.css */
+
+/* ... (existing styles) */
+
+body {
+    background-image: url('/images/loginpic1.jpg');
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-size: cover;
+      background-position: center;
+      opacity: 88%;
+    padding: 30px;
+}
+.main-heading,.sub-heading{
+    color: white;
+}
+.signup-form {
+    position: relative;
+    z-index: 1; /* Ensure the form appears above the overlay */
+    padding: 20px;
+    color: rgb(0, 0, 0);
+}
+/* Add the blue line under the signup form */
+.signup-form::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 40px;
+    height: 4px;
+    background-color: #3498db; /* Blue color */
+}
+
+.main-heading {
+    font-size: 24px;
+    text-align: center;
+}
+
+.sub-heading {
+    font-size: 18px;
+    text-align: center;
+}
+
+.form-section {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+}
+.message{
+    max-height: 14px;
+    font-size: small;
+}
+.form-control{
+    line-height: 1;
+    font-size: 14px;
+}

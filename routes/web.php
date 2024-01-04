@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\AuthController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -17,14 +17,21 @@ Route::get('/', function () {
     return view('home.home');
 });
 
-Route::get('/userlogin',function(){
-    return view('userLogin');
-});
+//To show the login Page
+Route::get('/login/{user_type?}',[AuthController::class, 'login'])->name('login');
 
-Route::get('/ngologin',function(){
-    return view('ngoLogin');
-});
+// To default User login
+Route::get('/login',[AuthController::class,'login']);
 
-Route::get('/adminlogin',function(){
-    return view('adminLogin');
-});
+//TO show sign up Page
+Route::get('/signup/{user_type?}',[AuthController::class,'signup'])->name('signup');
+
+
+//To register the User
+Route::post('/registeruser',[AuthController::class,'registerUser'])->name('registeruser');
+
+// Route::get('/adminlogin',[AuthController::class,'adminLogin']);
+// Route::get('/dbconn',function(){return view('dbconn');});
+
+
+
