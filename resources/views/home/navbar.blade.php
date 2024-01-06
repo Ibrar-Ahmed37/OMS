@@ -37,11 +37,16 @@
                             Logins
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="{{ route('login', ['user_type' => 'user'])}}">User Login</a></li>
-                            <li><a class="dropdown-item" href="{{ url('login', ['user_type' => 'ngoadmin'])}}">NGO Login</a></li>
-                            <li><a class="dropdown-item" href="{{ url('login', ['user_type' => 'admin'])}}">Admin Login</a></li>
+                            <li><a class="dropdown-item" href="{{ route('login', ['user_type' => 'user'])}}">User
+                                    Login</a></li>
+                            <li><a class="dropdown-item" href="{{ url('login', ['user_type' => 'ngoadmin'])}}">NGO
+                                    Login</a></li>
+                            <li><a class="dropdown-item" href="{{ url('login', ['user_type' => 'admin'])}}">Admin
+                                    Login</a></li>
                         </ul>
                     </li>
+                    <!-- resources/views/your-blade-view.blade.php -->
+                    <a href="{{ route('logout') }}" class="btn btn-primary"> logout</a>
                 </ul>
             </div>
         </div>

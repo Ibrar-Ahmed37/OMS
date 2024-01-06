@@ -22,9 +22,6 @@
     --text-white:#fff;
     --text-black:#151515;
     --text-gray:#e4e4e4;
-
-
-    
 }
 body{
     font-family: var(--primary-font);

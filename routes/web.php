@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\LogoutController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,9 +14,7 @@ use App\Http\Controllers\AuthController;
 |
 */
 
-Route::get('/', function () {
-    return view('home.home');
-});
+Route::get('/', function () {return view('home.home');});
 
 //To show the login Page
 Route::get('/login/{user_type?}',[AuthController::class, 'login'])->name('login');
@@ -30,6 +29,8 @@ Route::get('/login',[AuthController::class,'login']);
 //TO show sign up Page
 Route::get('/signup/{user_type?}',[AuthController::class,'signup'])->name('signup');
 
+//Logout controller
+Route::get('/logout', [LogoutController::class,'logout'])->name('logout');
 
 //To register the User
 Route::post('/registeruser',[AuthController::class,'registerUser'])->name('registeruser');

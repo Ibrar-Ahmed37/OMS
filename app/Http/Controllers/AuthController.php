@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\User;
 use Illuminate\Support\Facades\Hash;
-
+use Illuminate\Support\Facades\Session;
 
 class AuthController extends Controller
 {
@@ -13,22 +13,16 @@ class AuthController extends Controller
     {
         return view("login");
     }
-    public function ngoLogin()
-    {
-        return view("ngoLogin");
-    }
-    public function adminLogin()
-    {
-        return view("adminLogin");
-    }
     public function modal()
     {
         return view("modal");
     }
-    public function signup(){
+    public function signup()
+    {
         return view("signup");
     }
-    public function validateLogin(Request $request) {
+    public function validateLogin(Request $request)
+    {
         $credentials = $request->validate([
             'email' => 'required|email',
             'password' => 'required',
@@ -37,12 +31,12 @@ class AuthController extends Controller
         $user = User::where('email', $credentials['email'])->first();
 
         if ($user && Hash::check($credentials['password'], $user->password)) {
-            dd("logged in");
             // Authentication passed
-            return redirect()->route('submitDonation'); // Change 'dashboard' to your desired redirect route
+            // Session::put('user', $user);
+            $request->session()->put('user',$user); // Replace with your user type logic
+
+            return redirect('/');
         }
-        // else
-        //     dd('not exist');
         return back()->with('fail', 'Invalid credentials. Please enter Valid credentials');
     }
     // public function submitDonation (Request $request){
@@ -82,5 +76,5 @@ class AuthController extends Controller
         }
 
     }
-    
+
 }
