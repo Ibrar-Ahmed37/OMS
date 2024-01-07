@@ -35,4 +35,13 @@ class UserController extends Controller
         // Redirect to a success page or perform any other actions
         return redirect('/');
     }
+    public function getAllUserRegistrations(){
+        try {
+            $userRequests = UserRequest::all();
+            return view('showUserRegistration', compact('userRequests'));
+        } catch (\Exception $e) {
+            \Illuminate\Support\Facades\Log::error($e->getMessage());
+            return response()->json(['error' => 'An error occurred.']);
+        }
+    }
 }

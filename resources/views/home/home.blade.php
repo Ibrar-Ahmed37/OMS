@@ -19,19 +19,19 @@
 
     @include('home.navbar')
     @if(session('user.user_type')!== 'admin')
-        @include('home.heroSection')
-        @include('home.aboutSection')
-        @include('home.ngoSection')
-        @include('home.ngoGallerySection')
-        @include('home.servicesSection')
-        @include('home.contactSection')
-        @include('home.footerSection')
-        @include('../donationForm')
-        @include('home.guardianRegistrationForm')
-        @include('home.userRegistrationForm')
-        @include('home.orphanRegistrationForm')
+    @include('home.heroSection')
+    @include('home.aboutSection')
+    @include('home.ngoSection')
+    @include('home.ngoGallerySection')
+    @include('home.servicesSection')
+    @include('home.contactSection')
+    @include('home.footerSection')
+    @include('../donationForm')
+    @include('home.guardianRegistrationForm')
+    @include('home.userRegistrationForm')
+    @include('home.orphanRegistrationForm')
     @else
-        <!-- make four tabs of nav that covers the left side of the page and it gets 30% width of the page , the nav items should have 
+    <!-- make four tabs of nav that covers the left side of the page and it gets 30% width of the page , the nav items should have 
         Maintain Orphan Details
         Orphan Gallery
         User Request
@@ -39,8 +39,8 @@
         And on the right show respective data linked to these nav items
 
         Note: THis should be responsive in design for mobile too -->
-        
-        <div class="container-fluid">
+
+    <div class="container-fluid">
         <!-- Navigation Sidebar -->
         <nav class="sidebar">
             <ul class="nav flex-column nav-tabs">
@@ -79,7 +79,7 @@
             </div>
         </main>
     </div>
-
+    
     @endif
     <!-- Cstom js link-->
     <script src="Javascript/script.js"></script>

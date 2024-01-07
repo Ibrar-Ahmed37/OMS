@@ -37,19 +37,30 @@ Route::get('/signup/{user_type?}',[AuthController::class,'signup'])->name('signu
 //Logout controller
 Route::get('/logout', [LogoutController::class,'logout'])->name('logout');
 
+//To register the User
+Route::post('/registeruser',[AuthController::class,'registerUser'])->name('registeruser');
+
 //Modal for Donations
 Route::get('/donation', [DonationController::class,'donation'])->name('donation');
 Route::post('/submit_donation', [DonationController::class,'submitDonation'])->name('submit_donation');
+Route::get('/dontaion/registration/showAll', [DonationController::class, 'getAllDonations'])->name('donation.registration.showAll');
 
-//To register the User
-Route::post('/registeruser',[AuthController::class,'registerUser'])->name('registeruser');
 
 // routes/web.php
 Route::get('/user/registration', [UserController::class, 'showUserRegistrationForm'])->name('user.registration');
 Route::post('/user/registration/submit', [UserController::class, 'submitRegistration'])->name('user.registration.submit');
+Route::get('/user/registration/showAll', [UserController::class, 'getAllUserRegistrations'])->name('user.registration.showAll');
 
 Route::get('/guardian/registration', [GuardianController::class, 'showGuardianRegistrationForm'])->name('guardian.registration');
 Route::post('/guardian/registration/submit', [GuardianController::class, 'submitRegistration'])->name('guardian.registration.submit');
+Route::get('/guardian/registration/showAll', [GuardianController::class, 'getAllGuardianRegistrations'])->name('guardian.registration.showAll');
 
+//Orphan Controller routes
 Route::get('/orphan/registration', [OrphanController::class, 'showOrphanRegistrationForm'])->name('orphan.registration');
 Route::post('/orphan/registration/submit', [OrphanController::class, 'submitRegistration'])->name('orphan.registration.submit');
+Route::get('/orphan/registration/showAll', [OrphanController::class, 'getAllOrphanRegistrations'])->name('orphan.registration.showAll');
+
+
+//common has all the getALL INFO BUTTONS - LATER CONVER TO BUTTONS
+Route::get('/orphan/registration/show', [OrphanController::class, 'showOrphanPage'])->name('orphan.registration.showOrphanPage');
+

@@ -7,7 +7,7 @@ use App\Models\GuardianRequest;
 
 class GuardianController extends Controller
 {
-   /**
+    /**
      * Show the guardian registration form.
      *
      * @return \Illuminate\View\View
@@ -40,4 +40,21 @@ class GuardianController extends Controller
         // return redirect()->route('guardian.registration.success');
         return redirect('/');
     }
+    public function getAllGuardianRegistrations()
+    {
+        try {
+            $guardianRequests = GuardianRequest::all();
+            return view('showGuardianRegistration', compact('guardianRequests'));
+        } catch (\Exception $e) {
+            // Log the error message along with additional information
+            \Illuminate\Support\Facades\Log::error('Error in Guardian Registrations: ' . $e->getMessage(), [
+                'guardian_requests' => GuardianRequest::all()->toArray(), // Log all guardian requests
+                'exception_trace' => $e->getTraceAsString(), // Log the full stack trace
+            ]);
+
+            // Return a more detailed error response
+            return response()->json(['error' => 'An error occurred. Please check the logs for more details.'], 500);
+        }
+    }
+
 }

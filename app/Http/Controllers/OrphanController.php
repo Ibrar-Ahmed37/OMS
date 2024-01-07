@@ -42,4 +42,18 @@ class OrphanController extends Controller
             return redirect()->route('orphan.registration')->with('error', 'An error occurred.');
         }
     }
+    public function getAllOrphanRegistrations()
+    {   
+        try {
+            $registrations = OrphanRequest::all();
+            return view('showOrphanRegistration', compact('registrations'));
+        } catch (\Exception $e) {
+            \Illuminate\Support\Facades\Log::error($e->getMessage());
+            return response()->json(['error' => 'An error occurred.']);
+        }
+    }
+    
+    public function showOrphanPage(){
+        return view('show');
+    }
 }

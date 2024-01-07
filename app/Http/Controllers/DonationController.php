@@ -35,4 +35,15 @@ class DonationController extends Controller
             return back()->with('fail','Failed to save Donations');
         }
     }
+    public function getAllDonations()
+    {   
+        try {
+            $donations = Donation::all();
+            return view('showDonation', compact('donations'));
+        } catch (\Exception $e) {
+            \Illuminate\Support\Facades\Log::error($e->getMessage());
+            return response()->json(['error' => 'An error occurred.']);
+        }
+    }
 }
+
