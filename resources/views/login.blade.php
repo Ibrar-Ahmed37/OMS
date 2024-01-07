@@ -17,7 +17,7 @@
     <input type="checkbox" id="flip">
     <div class="cover">
       <div class="front">
-        <img src="images/loginpic1.jpg" alt="">
+        <img src="{{ asset('images/loginpic1.jpg') }}" alt="Login Image">
         <div class="text">
           <span class="text-1">Every new supporter is a fresh journey,<br> bringing hope and love to orphaned
             lives.</span>
