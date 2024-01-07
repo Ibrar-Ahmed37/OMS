@@ -31,6 +31,9 @@
                     <li class="nav-item">
                         <a class="nav-link" href="#contact">Contact now</a>
                     </li>
+
+                    <!-- Show if no user is there -->
+                    @if(!session('user'))
                     <li class="nav-item dropdown mt-3 mt-lg-0">
                         <a class="main-btn dropdown-toggle " href="#" id="navbarDropdown" role="button"
                             data-bs-toggle="dropdown" aria-expanded="false">
@@ -45,8 +48,41 @@
                                     Login</a></li>
                         </ul>
                     </li>
-                    <!-- resources/views/your-blade-view.blade.php -->
-                    <a href="{{ route('logout') }}" class="btn btn-primary"> logout</a>
+                    @endif
+
+                    <!-- only shown to the user -->
+                    @if(session('user.user_type') === 'user')
+                    <li class="nav-item dropdown mt-3 mt-lg-0">
+                        <a class="main-btn dropdown-toggle " href="#" id="navbarDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Registration
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="{{ route('login', ['user_type' => 'user'])}}">
+                                    Guardian Form</a></li>
+                            <li><a class="dropdown-item" href="{{ url('login', ['user_type' => 'ngoadmin'])}}">
+                                    User Form</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"> <a class="nav-link" href="{{ route('logout') }}"> Event </a></li>
+                    @endif
+
+                    <!-- only for ngo  -->
+                    @if(session('user.user_type') === 'ngoadmin' )
+                        <li class="nav-item"> <a class="nav-link" href="{{ route('logout') }}"> Register Orphan</a></li>
+                    @endif
+
+                    <!-- These two are common for ngo and user -->
+                    @if(session('user.user_type') === 'ngoadmin' || session('user.user_type') === 'user')
+                        <li class="nav-item"> <a class="nav-link" href="{{ route('logout') }}"> Donate Now</a></li>
+                        <li class="nav-item"> <a class="nav-link" href="{{ route('logout') }}"> Complaints & Feedback</a></li>
+                    @endif
+
+                    <!-- only shown to the user if session is there  -->
+                    @if(session('user'))
+                    <li class="nav-item"> <a class="nav-link logout-btn" href="{{ route('logout') }}"> Logout</a></li>
+                    @endif
+
                 </ul>
             </div>
         </div>

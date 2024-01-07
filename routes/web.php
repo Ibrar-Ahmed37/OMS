@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ModalController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\LogoutController;
@@ -31,6 +32,10 @@ Route::get('/signup/{user_type?}',[AuthController::class,'signup'])->name('signu
 
 //Logout controller
 Route::get('/logout', [LogoutController::class,'logout'])->name('logout');
+
+//Modal for Donations
+Route::get('/donation', [ModalController::class,'donation'])->name('donation');
+Route::post('/submit_donation', [ModalController::class,'submitDonation'])->name('submit_donation');
 
 //To register the User
 Route::post('/registeruser',[AuthController::class,'registerUser'])->name('registeruser');
