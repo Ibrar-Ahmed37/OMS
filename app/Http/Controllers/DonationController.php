@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Donation;
 
-class ModalController extends Controller
+class DonationController extends Controller
 {
     public function donation(){
         return view("donationForm");

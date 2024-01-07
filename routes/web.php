@@ -1,9 +1,13 @@
 <?php
 
-use App\Http\Controllers\ModalController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\DonationController;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\GuardianController;
 use App\Http\Controllers\LogoutController;
+use App\Http\Controllers\OrphanController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -34,14 +38,18 @@ Route::get('/signup/{user_type?}',[AuthController::class,'signup'])->name('signu
 Route::get('/logout', [LogoutController::class,'logout'])->name('logout');
 
 //Modal for Donations
-Route::get('/donation', [ModalController::class,'donation'])->name('donation');
-Route::post('/submit_donation', [ModalController::class,'submitDonation'])->name('submit_donation');
+Route::get('/donation', [DonationController::class,'donation'])->name('donation');
+Route::post('/submit_donation', [DonationController::class,'submitDonation'])->name('submit_donation');
 
 //To register the User
 Route::post('/registeruser',[AuthController::class,'registerUser'])->name('registeruser');
 
-// Route::get('/adminlogin',[AuthController::class,'adminLogin']);
-// Route::get('/dbconn',function(){return view('dbconn');});
+// routes/web.php
+Route::get('/user/registration', [UserController::class, 'showUserRegistrationForm'])->name('user.registration');
+Route::post('/user/registration/submit', [UserController::class, 'submitRegistration'])->name('user.registration.submit');
 
+Route::get('/guardian/registration', [GuardianController::class, 'showGuardianRegistrationForm'])->name('guardian.registration');
+Route::post('/guardian/registration/submit', [GuardianController::class, 'submitRegistration'])->name('guardian.registration.submit');
 
-
+Route::get('/orphan/registration', [OrphanController::class, 'showOrphanRegistrationForm'])->name('orphan.registration');
+Route::post('/orphan/registration/submit', [OrphanController::class, 'submitRegistration'])->name('orphan.registration.submit');

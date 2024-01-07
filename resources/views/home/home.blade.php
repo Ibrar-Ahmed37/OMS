@@ -44,21 +44,6 @@
 
     @include('home.navbar')
     @include('home.heroSection')
-    <div class="text-center">
-        <button type="button" class="btn btn-primary btn-lg" data-bs-toggle="modal" data-bs-target="#donateModal">
-            Donate
-        </button>
-    </div>
-    @if(session('user.user_type') === 'admin')
-    <h1>Welcome, Admin!</h1>
-    {{-- Add admin-specific content here --}}
-    @elseif(session('user.user_type') === 'ngoadmin')
-    <h1>Welcome, NGO Admin!</h1>
-    {{-- Add NGO admin-specific content here --}}
-    @else
-    <h1>Welcome, User!</h1>
-    {{-- Add default user-specific content here --}}
-    @endif
 
     @include('home.aboutSection')
     @include('home.ngoSection')

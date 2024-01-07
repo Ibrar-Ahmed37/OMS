@@ -58,9 +58,9 @@
                             Registration
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="{{ route('login', ['user_type' => 'user'])}}">
+                            <li><a class="dropdown-item" href="{{ route('guardian.registration') }}">
                                     Guardian Form</a></li>
-                            <li><a class="dropdown-item" href="{{ url('login', ['user_type' => 'ngoadmin'])}}">
+                            <li><a class="dropdown-item" href="{{ route('user.registration') }}">
                                     User Form</a></li>
                         </ul>
                     </li>
@@ -69,12 +69,12 @@
 
                     <!-- only for ngo  -->
                     @if(session('user.user_type') === 'ngoadmin' )
-                        <li class="nav-item"> <a class="nav-link" href="{{ route('logout') }}"> Register Orphan</a></li>
+                        <li class="nav-item"> <a class="nav-link" href="{{ route('orphan.registration') }}"> Register Orphan</a></li>
                     @endif
 
                     <!-- These two are common for ngo and user -->
                     @if(session('user.user_type') === 'ngoadmin' || session('user.user_type') === 'user')
-                        <li class="nav-item"> <a class="nav-link" href="{{ route('logout') }}"> Donate Now</a></li>
+                        <li class="nav-item"> <a class="nav-link" href="{{ route('donation') }}"> Donate Now</a></li>
                         <li class="nav-item"> <a class="nav-link" href="{{ route('logout') }}"> Complaints & Feedback</a></li>
                     @endif
 
