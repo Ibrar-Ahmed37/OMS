@@ -66,10 +66,9 @@
                     </li>
                     <li class="nav-item"> <a class="nav-link" href="{{ route('logout') }}"> Event </a></li>
                     @endif
-
                     <!-- only for ngo  -->
                     @if(session('user.user_type') === 'ngoadmin' )
-                        <li class="nav-item"> <a class="nav-link" href="{{ route('orphan.registration') }}"> Register Orphan</a></li>
+                        <li class="nav-item"> <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#orphanRegistrationModal"> Register Orphan</a></li>
                     @endif
 
                     <!-- These two are common for ngo and user -->

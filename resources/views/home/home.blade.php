@@ -29,6 +29,7 @@
     @include('../donationForm')
     @include('home.guardianRegistrationForm')
     @include('home.userRegistrationForm')
+    @include('home.orphanRegistrationForm')
     <!-- Cstom js link-->
     <script src="Javascript/script.js"></script>
     <!--js lightbox link-->
