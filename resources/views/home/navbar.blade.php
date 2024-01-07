@@ -11,6 +11,7 @@
                 <i class="fas fa-stream navbar-toggler-icon"></i>
             </button>
 
+            @if(session('user.user_type')!== 'admin')
             <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
                 <ul class="navbar-nav menu-navbar-nav">
                     <li class="nav-item">
@@ -58,9 +59,11 @@
                             Registration
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#guardianRegistrationModal">
+                            <li><a class="dropdown-item" href="#" data-bs-toggle="modal"
+                                    data-bs-target="#guardianRegistrationModal">
                                     Guardian Form</a></li>
-                            <li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#userRegistrationModal">
+                            <li><a class="dropdown-item" href="#" data-bs-toggle="modal"
+                                    data-bs-target="#userRegistrationModal">
                                     User Form</a></li>
                         </ul>
                     </li>
@@ -68,13 +71,16 @@
                     @endif
                     <!-- only for ngo  -->
                     @if(session('user.user_type') === 'ngoadmin' )
-                        <li class="nav-item"> <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#orphanRegistrationModal"> Register Orphan</a></li>
+                    <li class="nav-item"> <a class="nav-link" href="#" data-bs-toggle="modal"
+                            data-bs-target="#orphanRegistrationModal"> Register Orphan</a></li>
                     @endif
 
                     <!-- These two are common for ngo and user -->
                     @if(session('user.user_type') === 'ngoadmin' || session('user.user_type') === 'user')
-                        <li class="nav-item"><a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#donationModal">Donate Now</a></li>
-                        <li class="nav-item"> <a class="nav-link" href="{{ route('logout') }}"> Complaints & Feedback</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#" data-bs-toggle="modal"
+                            data-bs-target="#donationModal">Donate Now</a></li>
+                    <li class="nav-item"> <a class="nav-link" href="{{ route('logout') }}"> Complaints & Feedback</a>
+                    </li>
                     @endif
 
                     <!-- only shown to the user if session is there  -->
@@ -84,6 +90,10 @@
 
                 </ul>
             </div>
+            @endif
+            @if(session('user.user_type')==='admin')
+            <li class="nav-item"> <a class="nav-link logout-btn" href="{{ route('logout') }}"> Logout</a></li>
+            @endif
         </div>
     </nav>
 </header>
