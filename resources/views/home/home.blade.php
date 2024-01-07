@@ -27,6 +27,8 @@
     @include('home.contactSection')
     @include('home.footerSection')
     @include('../donationForm')
+    @include('home.guardianRegistrationForm')
+    @include('home.userRegistrationForm')
     <!-- Cstom js link-->
     <script src="Javascript/script.js"></script>
     <!--js lightbox link-->

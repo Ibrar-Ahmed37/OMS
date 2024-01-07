@@ -58,9 +58,9 @@
                             Registration
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="{{ route('guardian.registration') }}">
+                            <li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#guardianRegistrationModal">
                                     Guardian Form</a></li>
-                            <li><a class="dropdown-item" href="{{ route('user.registration') }}">
+                            <li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#userRegistrationModal">
                                     User Form</a></li>
                         </ul>
                     </li>
