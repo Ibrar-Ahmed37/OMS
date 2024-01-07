@@ -74,7 +74,7 @@
 
                     <!-- These two are common for ngo and user -->
                     @if(session('user.user_type') === 'ngoadmin' || session('user.user_type') === 'user')
-                        <li class="nav-item"> <a class="nav-link" href="{{ route('donation') }}"> Donate Now</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#donationModal">Donate Now</a></li>
                         <li class="nav-item"> <a class="nav-link" href="{{ route('logout') }}"> Complaints & Feedback</a></li>
                     @endif
 
