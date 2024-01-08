@@ -27,6 +27,7 @@ class UserController extends Controller
             'orphan_name' => 'required|string|max:255',
             'orphan_gender' => 'required|string|in:male,female',
             'rescue_location' => 'required|string',
+            'age' => 'required|string|max:255'
         ]);
 
         // Create a new UserRequest record in the database

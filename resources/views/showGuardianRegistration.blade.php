@@ -13,6 +13,7 @@
                     <th>Parent Contact Number</th>
                     <th>Address</th>
                     <th>Child Name</th>
+                    <th>Child Age</th>
                     <th>Bayform Number</th>
                     <th>Child Gender</th>
                     <th>Reason to Register</th>
@@ -29,6 +30,7 @@
                         <td>{{ $guardianRequest->parent_contact_number }}</td>
                         <td>{{ $guardianRequest->address }}</td>
                         <td>{{ $guardianRequest->child_name }}</td>
+                        <td>{{ $guardianRequest->age }}</td>
                         <td>{{ $guardianRequest->bayform_number }}</td>
                         <td>{{ $guardianRequest->child_gender }}</td>
                         <td>{{ $guardianRequest->reason_to_register }}</td>

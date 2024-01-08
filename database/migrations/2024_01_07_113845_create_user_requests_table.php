@@ -16,6 +16,7 @@ return new class extends Migration
             $table->string('user_cnic');
             $table->string('orphan_name');
             $table->string('orphan_gender');
+            $table->string('age');
             $table->text('rescue_location');
             $table->timestamps();
         });

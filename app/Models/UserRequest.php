@@ -14,6 +14,7 @@ class UserRequest extends Model
         'user_contact_number',
         'user_gender',
         'user_cnic',
+        'age',
         'orphan_name',
         'orphan_gender',
         'rescue_location',

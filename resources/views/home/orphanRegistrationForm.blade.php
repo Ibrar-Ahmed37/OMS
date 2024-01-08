@@ -1,5 +1,6 @@
 <!-- Orphan Registration Modal -->
-<div class="modal" id="orphanRegistrationModal" tabindex="-1" aria-labelledby="orphanRegistrationModalLabel" aria-hidden="true">
+<div class="modal" id="orphanRegistrationModal" tabindex="-1" aria-labelledby="orphanRegistrationModalLabel"
+    aria-hidden="true">
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
             <div class="modal-header">
@@ -9,13 +10,13 @@
             <div class="modal-body">
                 <!-- Error Display -->
                 @if ($errors->any())
-                    <div class="alert alert-danger">
-                        <ul>
-                            @foreach ($errors->all() as $error)
-                                <li>{{ $error }}</li>
-                            @endforeach
-                        </ul>
-                    </div>
+                <div class="alert alert-danger">
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
                 @endif
 
                 <form method="POST" action="{{ route('orphan.registration.submit') }}">
@@ -43,10 +44,13 @@
                         </div>
                         <div class="col-md-6 mb-3">
                             <label for="orphan_age">Orphan Age</label>
-                            <input type="text" class="form-control" id="orphan_age" name="orphan_age" required>
+                            <select class="form-control" id="orphan_age" name="orphan_age" required>
+                                <option value="0">0</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                            </select>
                         </div>
                     </div>
-
                     <div class="row">
                         <div class="col-md-6 mb-3">
                             <label for="orphan_gender">Orphan Gender</label>
@@ -57,7 +61,8 @@
                         </div>
                         <div class="col-md-6 mb-3">
                             <label for="orphan_description">Orphan Description</label>
-                            <textarea class="form-control" id="orphan_description" name="orphan_description" rows="3" required></textarea>
+                            <textarea class="form-control" id="orphan_description" name="orphan_description" rows="3"
+                                required></textarea>
                         </div>
                     </div>
 
@@ -68,7 +73,8 @@
                         </div>
                         <div class="col-md-6 mb-3">
                             <label for="orphan_bayform">Orphan Bayform/CNIC</label>
-                            <textarea class="form-control" id="orphan_bayform" name="orphan_bayform" rows="3" required></textarea>
+                            <textarea class="form-control" id="orphan_bayform" name="orphan_bayform" rows="3"
+                                required></textarea>
                         </div>
                     </div>
                     <button type="submit" class="btn btn-primary">Submit</button>

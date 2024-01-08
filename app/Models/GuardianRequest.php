@@ -12,6 +12,7 @@ class GuardianRequest extends Model
     protected $fillable = [
         'mother_name',
         'mother_cnic',
+        'age',
         'father_name',
         'father_cnic',
         'parent_contact_number',

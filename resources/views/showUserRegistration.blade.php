@@ -10,6 +10,7 @@
                     <th>Contact Number</th>
                     <th>Gender</th>
                     <th>CNIC</th>
+                    <th>Age</th>
                     <th>Orphan Name</th>
                     <th>Orphan Gender</th>
                     <th>Rescue Location</th>
@@ -23,6 +24,7 @@
                         <td>{{ $userRequest->user_contact_number }}</td>
                         <td>{{ $userRequest->user_gender }}</td>
                         <td>{{ $userRequest->user_cnic }}</td>
+                        <td>{{ $userRequest->age }}</td>
                         <td>{{ $userRequest->orphan_name }}</td>
                         <td>{{ $userRequest->orphan_gender }}</td>
                         <td>{{ $userRequest->rescue_location }}</td>

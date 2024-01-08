@@ -31,6 +31,7 @@ class GuardianController extends Controller
             'bayform_number' => 'required|string|max:255',
             'child_gender' => 'required|string|in:male,female',
             'reason_to_register' => 'required|string',
+            'age' => 'required|string|max:255'
         ]);
 
         // Create a new GuardianRequest record in the database
