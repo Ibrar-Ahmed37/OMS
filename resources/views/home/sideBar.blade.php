@@ -1,4 +1,5 @@
-@include('home.showDonationModal');
+<link rel="stylesheet" href="{{ asset('css/modal.css') }}">
+
 <div class="container-fluid" style="padding-left: 0; padding-right: 0;">
     <!-- Navigation Sidebar -->
     <nav class="col-md-3 col-lg-2 d-md-block  sidebar" style="position: fixed;">
@@ -56,7 +57,7 @@
             <h2>Other Ngo Request</h2>
             <div class="container mt-5">
                 <h2>Donation Records</h2>
-                <a href="{{ route('donation.registration.showAll') }}">Donations</a>  
+                <div className='links'><a href="{{ route('donation.registration.showAll') }}">Donations</a> </div>
             </div>
             <div class="container mt-5">
                 <h2>Orphan Registration</h2>
