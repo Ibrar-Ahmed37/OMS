@@ -39,48 +39,40 @@
         And on the right show respective data linked to these nav items
 
         Note: THis should be responsive in design for mobile too -->
-
-    <div class="container-fluid">
-        <!-- Navigation Sidebar -->
-        <nav class="sidebar">
-            <ul class="nav flex-column nav-tabs">
-                <li class="nav-item">
-                    <a class="nav-link active" id="maintain-tab" data-toggle="pill" href="#maintainOrphanDetails">Maintain Orphan Details</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" id="gallery-tab" data-toggle="pill" href="#orphanGallery">Orphan Gallery</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" id="request-tab" data-toggle="pill" href="#userRequest">User Request</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" id="ngo-tab" data-toggle="pill" href="#otherNgoRequest">Other Ngo Request</a>
-                </li>
-            </ul>
-        </nav>
-
-        <!-- Content -->
-        <main role="main" class="tab-content">
-            <div class="tab-pane fade show active" id="maintainOrphanDetails">
-                <h2>Maintain Orphan Details</h2>
-                <!-- Content specific to Maintain Orphan Details -->
-            </div>
-            <div class="tab-pane fade" id="orphanGallery">
-                <h2>Orphan Gallery</h2>
-                <!-- Content specific to Orphan Gallery -->
-            </div>
-            <div class="tab-pane fade" id="userRequest">
-                <h2>User Request</h2>
-                <!-- Content specific to User Request -->
-            </div>
-            <div class="tab-pane fade" id="otherNgoRequest">
-                <h2>Other Ngo Request</h2>
-                <!-- Content specific to Other Ngo Request -->
-            </div>
-        </main>
-    </div>
-    
+        @include('home.sideBar')
     @endif
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const tabs = document.querySelectorAll(".nav-link");
+            const contentAreas = document.querySelectorAll(".tab-pane");
+
+            tabs.forEach((tab) => {
+                if (tab.getAttribute("data-role") === "tab") {
+                    tab.addEventListener("click", function (event) {
+                        event.preventDefault();
+
+                        tabs.forEach((t) => t.classList.remove("active"));
+
+                        contentAreas.forEach((c) => {
+                            c.classList.add("d-none");
+                            c.classList.remove("show", "active");
+                        });
+
+                        this.classList.add("active");
+
+                        const activeContent = document.querySelector(
+                            this.getAttribute("href")
+                        );
+                        if (activeContent) {
+                            activeContent.classList.remove("d-none");
+                            activeContent.classList.add("show", "active");
+                        }
+                    });
+                }
+            });
+        });
+    </script>
     <!-- Cstom js link-->
     <script src="Javascript/script.js"></script>
     <!--js lightbox link-->

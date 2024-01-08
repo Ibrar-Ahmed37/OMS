@@ -62,5 +62,5 @@ Route::get('/orphan/registration/showAll', [OrphanController::class, 'getAllOrph
 
 
 //common has all the getALL INFO BUTTONS - LATER CONVER TO BUTTONS
-Route::get('/orphan/registration/show', [OrphanController::class, 'showOrphanPage'])->name('orphan.registration.showOrphanPage');
+// Route::get('/orphan/registration/show', [OrphanController::class, 'showOrphanPage'])->name('orphan.registration.showOrphanPage');
 

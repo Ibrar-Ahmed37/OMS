@@ -53,7 +53,7 @@ class OrphanController extends Controller
         }
     }
     
-    public function showOrphanPage(){
-        return view('show');
-    }
+    // public function showOrphanPage(){
+    //     return view('show');
+    // }
 }
