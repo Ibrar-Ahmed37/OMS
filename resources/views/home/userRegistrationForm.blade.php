@@ -51,6 +51,10 @@
                             </select>
                         </div>
                         <div class="col-md-6 mb-3">
+                            <label for="picture">Orphan Picture</label>
+                            <input type="file" class="form-control" id="picture" name="picture">
+                        </div>
+                        <div class="col-md-6 mb-3">
                             <label for="rescue_location">From where Child is Rescued?</label>
                             <textarea class="form-control" id="rescue_location" name="rescue_location" rows="3"
                                 required></textarea>

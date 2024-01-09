@@ -19,5 +19,7 @@ class OrphanRequest extends Model
         'orphan_description',
         'city',
         'orphan_bayform',
+        'file',
+        'picture'
     ];
 }

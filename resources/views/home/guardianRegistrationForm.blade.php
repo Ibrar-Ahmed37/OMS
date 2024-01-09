@@ -71,6 +71,16 @@
                     </div>
                     <div class="row">
                         <div class="col-md-6 mb-3">
+                            <label for="picture">Child Picture</label>
+                            <input type="file" class="form-control" id="picture" name="picture">
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="file">Child Reports (if any disease)</label>
+                            <input type="file" class="form-control" id="file" name="file">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
                             <label for="age">Age</label>
                             <select class="form-control" id="age" name="age" required>
                                 <option value="0">0</option>

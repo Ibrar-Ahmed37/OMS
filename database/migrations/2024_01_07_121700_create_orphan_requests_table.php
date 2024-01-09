@@ -20,6 +20,8 @@ return new class extends Migration
             $table->text('orphan_description');
             $table->text('city');
             $table->text('orphan_bayform');
+            $table->text('picture')->nullable();
+            $table->text('file')->nullable();
             $table->timestamps();
         });
     }

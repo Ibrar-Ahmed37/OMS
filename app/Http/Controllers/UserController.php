@@ -31,8 +31,14 @@ class UserController extends Controller
         ]);
 
         // Create a new UserRequest record in the database
-        UserRequest::create($validatedData);
-
+        $userRequest = UserRequest::create($validatedData);
+        if($userRequest)
+            {
+                return back()->with('success', 'User Request Saved Successfully');
+            }
+            else {
+                return back()->with('fail','Failed to save User Request');
+            }
         // Redirect to a success page or perform any other actions
         return redirect('/');
     }

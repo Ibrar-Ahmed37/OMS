@@ -21,6 +21,8 @@ return new class extends Migration
             $table->string('bayform_number');
             $table->string('child_gender');
             $table->text('reason_to_register');
+            $table->text('picture')->nullable();
+            $table->text('file')->nullable();
             $table->timestamps();
         });
     }

@@ -21,5 +21,7 @@ class GuardianRequest extends Model
         'bayform_number',
         'child_gender',
         'reason_to_register',
+        'file',
+        'picture'
     ];
 }

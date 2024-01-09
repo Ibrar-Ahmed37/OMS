@@ -17,7 +17,8 @@ return new class extends Migration
             $table->string('orphan_name');
             $table->string('orphan_gender');
             $table->string('age');
-            $table->text('rescue_location');
+            $table->text('rescue_location');       
+            $table->text('picture')->nullable();
             $table->timestamps();
         });
     }

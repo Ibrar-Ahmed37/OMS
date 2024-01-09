@@ -30,7 +30,14 @@ class OrphanController extends Controller
 
 
             // dd($validatedData);
-            OrphanRequest::create($validatedData);
+            $orpahnRequest = OrphanRequest::create($validatedData);
+            if($orpahnRequest)
+            {
+                return back()->with('success', 'Orphan Request Saved Successfully');
+            }
+            else {
+                return back()->with('fail','Failed to save Orphan Request');
+            }
 
             return redirect('/');
         } catch (\Illuminate\Validation\ValidationException $e) {

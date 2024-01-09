@@ -43,6 +43,10 @@
                             <input type="text" class="form-control" id="orphan_name" name="orphan_name" required>
                         </div>
                         <div class="col-md-6 mb-3">
+                            <label for="picture">Orphan Picture</label>
+                            <input type="file" class="form-control" id="picture" name="picture">
+                        </div>
+                        <div class="col-md-6 mb-3">
                             <label for="orphan_age">Orphan Age</label>
                             <select class="form-control" id="orphan_age" name="orphan_age" required>
                                 <option value="0">0</option>
@@ -64,6 +68,11 @@
                             <textarea class="form-control" id="orphan_description" name="orphan_description" rows="3"
                                 required></textarea>
                         </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="file">Orphan Reports (if any disease)</label>
+                            <input type="file" class="form-control" id="file" name="file">
+                        </div>
+
                     </div>
 
                     <div class="row">

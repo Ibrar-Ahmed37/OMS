@@ -35,10 +35,15 @@ class GuardianController extends Controller
         ]);
 
         // Create a new GuardianRequest record in the database
-        GuardianRequest::create($validatedData);
+        $guardianRequest = GuardianRequest::create($validatedData);
+        if($guardianRequest)
+        {
+            return back()->with('success', 'Guardian Request Saved Successfully');
+        }
+        else{
+            return back()->with('fail','Failed to save Guardian Request');
+        }
 
-        // Redirect to a success page or perform any other actions
-        // return redirect()->route('guardian.registration.success');
         return redirect('/');
     }
     public function getAllGuardianRegistrations()

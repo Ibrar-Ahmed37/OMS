@@ -18,5 +18,6 @@ class UserRequest extends Model
         'orphan_name',
         'orphan_gender',
         'rescue_location',
+        'picture'
     ];
 }

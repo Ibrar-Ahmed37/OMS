@@ -16,7 +16,16 @@
 <body>
     <!-- Modal -->
 
-
+    @if(session('success'))
+    <script>
+        alert("{{ session('success') }}");
+    </script>
+    @endif
+    @if(session('fail'))
+    <script>
+        alert("{{ session('fail') }}");
+    </script>
+    @endif
     @include('home.navbar')
     @if(session('user.user_type')!== 'admin')
     @include('home.heroSection')
