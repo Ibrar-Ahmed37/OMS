@@ -2,6 +2,21 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins&family=Saira+Semi+Condensed:wght@600&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Oswald&family=Poppins&family=Saira+Semi+Condensed:wght@600&display=swap');
 
+.nav-tabs .nav-link {
+    color: white !important;
+}
+
+.nav-tabs .nav-link:hover {
+    color: black !important;
+}
+
+.nav-tabs .nav-link.active {
+    color: black !important;
+}
+.navbar-expand-lg .container {
+    max-width: 100%;
+    font-size: 50px;
+}
 @media (max-width:1199px){
     .header_wrapper .navbar-expand-lg .navbar-nav{
         
@@ -35,14 +50,15 @@
         height:auto;
 
     }
+    
     .header_wrapper .menu-navbar-nav{
         text-align:center;
         padding-bottom:.9375rem;
 
     }
+    
     .header_wrapper .nav-item .nav-link{
         margin-top: .9375rem;
-
     }
     .ngo-items .ngo-content{
         padding: 2rem 1.875rem;

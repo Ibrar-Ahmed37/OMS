@@ -1,3 +1,4 @@
+
 <link rel="stylesheet" href="{{ asset('css/modal.css') }}">
 
 <div class="container-fluid" style="padding-left: 0; padding-right: 0;">
@@ -9,7 +10,7 @@
                     href="#maintainOrphanDetails">Maintain Orphan Details</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" data-role="tab" id="gallery-tab" data-toggle="pill" href="#orphanGallery">Orphan
+                <a  class="nav-link" data-role="tab" id="gallery-tab" data-toggle="pill" href="#orphanGallery">Orphan
                     Gallery</a>
             </li>
             <li class="nav-item">
@@ -25,7 +26,7 @@
 
     <!-- Content -->
     <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4 mt-5 " style="padding-top: 100px;">
-        <div class="tab-pane " id="maintainOrphanDetails">
+        <div class="tab-pane " id="maintainOrphanDetails" style="height: 70%;">
             <h2>Orphan Details</h2>
             <!-- Content specific to Maintain Orphan Details -->
         </div>
@@ -69,6 +70,9 @@
             </div>
             
             <!-- Content specific to Other Ngo Request -->
+        </div>
+        <div style="margin-left: -15px; margin-right: -15px; margin-top: 10%;">
+            @include('home.footerSection')
         </div>
     </main>
 </div>

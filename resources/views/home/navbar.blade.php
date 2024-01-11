@@ -92,7 +92,7 @@
             </div>
             @endif
             @if(session('user.user_type')==='admin')
-            <li class="nav-item"> <a class="nav-link logout-btn" href="{{ route('logout') }}"> Logout</a></li>
+            <div class="nav-item"> <a class="nav-link logout-btn" href="{{ route('logout') }}"> Logout</a></div>
             @endif
         </div>
     </nav>
