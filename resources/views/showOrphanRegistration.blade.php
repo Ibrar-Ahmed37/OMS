@@ -15,7 +15,8 @@
                     <th>Orphan Description</th>
                     <th>City</th>
                     <th>Orphan Bayform</th>
-                    <!-- Add more columns as needed -->
+                    <th>Picture</th>
+                    <th>Report</th>
                 </tr>
             </thead>
             <tbody>
@@ -31,7 +32,24 @@
                         <td>{{ $registration->orphan_description }}</td>
                         <td>{{ $registration->city }}</td>
                         <td>{{ $registration->orphan_bayform }}</td>
-                        <!-- Add more cells as needed -->
+                        <td>
+                            @if($registration->picture)
+                                <a href="{{ asset('../storage/' . $registration->picture) }}" target="_blank">
+                                    <img src="{{ asset('../storage/' . $registration->picture) }}" alt="User Picture" width="100">
+                                </a>
+                            @else
+                                No Picture Available
+                            @endif
+                        </td>
+                        <td>
+                            @if($registration->file)
+                                <a href="{{ asset('../storage/' . $registration->file) }}" download="{{ $registration->file }}">
+                                    {{ $registration->file }}
+                                </a>
+                            @else
+                                No Report Available
+                            @endif
+                        </td>
                     </tr>
                 @endforeach
             </tbody>

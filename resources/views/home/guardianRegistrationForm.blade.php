@@ -8,7 +8,7 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <form method="POST" action="{{ route('guardian.registration.submit') }}">
+                <form method="POST" action="{{ route('guardian.registration.submit') }} " enctype="multipart/form-data">
                     @csrf
                     <div class="row">
                         <div class="col-md-6 mb-3">
@@ -76,7 +76,7 @@
                         </div>
                         <div class="col-md-6 mb-3">
                             <label for="file">Child Reports (if any disease)</label>
-                            <input type="file" class="form-control" id="file" name="file">
+                            <input type="file" class="form-control" id="file" name="file" accept=".pdf">
                         </div>
                     </div>
                     <div class="row">

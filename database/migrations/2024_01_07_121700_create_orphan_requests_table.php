@@ -15,7 +15,7 @@ return new class extends Migration
             $table->string('address');
             $table->string('contact_no');
             $table->string('orphan_name');
-            $table->string('orphan_age');
+            $table->integer('orphan_age');
             $table->string('orphan_gender');
             $table->text('orphan_description');
             $table->text('city');

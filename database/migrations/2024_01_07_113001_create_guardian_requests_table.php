@@ -17,7 +17,7 @@ return new class extends Migration
             $table->string('parent_contact_number');
             $table->string('address');
             $table->string('child_name');
-            $table->string('age');
+            $table->integer('age');
             $table->string('bayform_number');
             $table->string('child_gender');
             $table->text('reason_to_register');

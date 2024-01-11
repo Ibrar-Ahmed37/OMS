@@ -19,7 +19,7 @@
                 </div>
                 @endif
 
-                <form method="POST" action="{{ route('orphan.registration.submit') }}">
+                <form method="POST" action="{{ route('orphan.registration.submit') }}"  enctype="multipart/form-data">
                     @csrf
 
                     <div class="row">
@@ -70,7 +70,7 @@
                         </div>
                         <div class="col-md-6 mb-3">
                             <label for="file">Orphan Reports (if any disease)</label>
-                            <input type="file" class="form-control" id="file" name="file">
+                            <input type="file" class="form-control" id="file" name="file" accept=".pdf">
                         </div>
 
                     </div>

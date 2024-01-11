@@ -26,8 +26,20 @@ class OrphanController extends Controller
                 'orphan_description' => 'required|string',
                 'city' => 'required|string',
                 'orphan_bayform' => 'required|string',
+                'picture' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+                'file' => 'mimes:pdf|max:4096',
             ]);
 
+         // Handle file uploads
+            if ($request->hasFile('picture')) {
+                $picturePath = $request->file('picture')->storeAs('uploads', 'picture_' . time() . '.' . $request->picture->extension(), 'public');
+                $validatedData['picture'] = $picturePath;
+            }
+
+            if ($request->hasFile('file')) {
+                $filePath = $request->file('file')->storeAs('uploads', 'file_' . time() . '.' . $request->file->extension());
+                $validatedData['file'] = $filePath;
+            }
 
             // dd($validatedData);
             $orpahnRequest = OrphanRequest::create($validatedData);

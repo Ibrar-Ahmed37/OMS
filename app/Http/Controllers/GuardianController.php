@@ -31,8 +31,22 @@ class GuardianController extends Controller
             'bayform_number' => 'required|string|max:255',
             'child_gender' => 'required|string|in:male,female',
             'reason_to_register' => 'required|string',
-            'age' => 'required|string|max:255'
+            'age' => 'required|string|max:255',
+            'picture' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'file' => 'mimes:pdf|max:4096' // Add any additional validation rules for the file field
         ]);
+
+        
+         // Handle file uploads
+        if ($request->hasFile('picture')) {
+            $picturePath = $request->file('picture')->storeAs('uploads', 'picture_' . time() . '.' . $request->picture->extension(), 'public');
+            $validatedData['picture'] = $picturePath;
+        }
+
+        if ($request->hasFile('file')) {
+            $filePath = $request->file('file')->storeAs('uploads', 'file_' . time() . '.' . $request->file->extension(), 'public');
+            $validatedData['file'] = $filePath;
+        }
 
         // Create a new GuardianRequest record in the database
         $guardianRequest = GuardianRequest::create($validatedData);
