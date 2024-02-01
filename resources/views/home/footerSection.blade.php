@@ -52,7 +52,7 @@
             </div>
         </div>
     </div>
-    <div class="container-fluid copyright-section">
+    <div class="container-fluid copyright-section footer-section">
         <p>Copyright <a href="#">&#169 Hoor&Namra</a> All Rights Reserved</p>
     </div>
 </section>

@@ -1,14 +1,19 @@
 <section id="ngo" class="ngo_wrapper">
-    <div class="container-fluid">
-        <div class="text text-center my-3">
-            <h1>Our NGO</h1>
-            <hr class="w-25 m-auto">
-        </div>
-        <div class="row">
-            <div class="col-sm-12 section-title text-center mb-5">
-                <h6>What our NGO can do for orphans</h6>
-                <h3>OUR VISION IS TO BUILD A COMMUNITY OF EMPOWERED ORPHANS AND PEOPLE <br> THAT CAN CONTRIBUTE TO
-                    SOCIETY AND HUMANITY AT LARGE.</h3>
+    <div class="ngo-section-wrap">
+        <div>
+            <div>
+                <div class="text text-center my-3">
+                    <h1>Our NGO</h1>
+                    <hr class="w-25 m-auto">
+                </div>
+                <div class="row">
+                    <div class="col-sm-12 section-title text-center mb-5">
+                        <h6>What our NGO can do for orphans</h6>
+                        <h3>OUR VISION IS TO BUILD A COMMUNITY OF EMPOWERED ORPHANS AND PEOPLE <br> THAT CAN CONTRIBUTE
+                            TO
+                            SOCIETY AND HUMANITY AT LARGE.</h3>
+                    </div>
+                </div>
             </div>
         </div>
         <div class="row m-0">

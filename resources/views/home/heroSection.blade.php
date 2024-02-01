@@ -1,3 +1,5 @@
+<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+
 <section id="home" class="banner_wrapper  p-0">
     <div class="swiper mySwiper">
         <div class="swiper-wrapper">
@@ -32,3 +34,15 @@
         <div class="swiper-pagination"></div>
     </div>
 </section>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        var mySwiper = new Swiper('.mySwiper', {
+            // Swiper configuration options
+            loop: true,
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+        });
+    });
+</script>
